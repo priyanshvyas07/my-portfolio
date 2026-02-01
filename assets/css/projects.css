@@ -1,0 +1,272 @@
+/* =========================================
+   GLOBAL RESET & BASE TYPOGRAPHY
+   Ensures consistent spacing and layout
+   across all browsers.
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth anchor scrolling */
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+
+/* =========================================
+   PRIMARY BUTTON STYLE
+   Used across pages for CTAs and navigation
+========================================= */
+
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    background-color: #ffcc00;
+    color: #000;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ffaa00;
+    transform: translateY(-2px); /* subtle lift effect */
+}
+
+
+/* =========================================
+   LANDING / HERO SECTION
+   Static intro section for Projects page.
+   Centered layout with strong visual hierarchy.
+========================================= */
+
+.landing {
+    min-height: 100vh;
+    padding-top: 70px; /* Prevent overlap with fixed navbar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+    text-align: center;
+}
+
+.landing h1 {
+    font-size: 3rem;
+    color: #ffcc00;
+    margin-bottom: 1rem;
+}
+
+.landing p {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    margin-bottom: 2rem;
+}
+
+
+/* =========================================
+   FIXED HEADER / NAVBAR
+   Persistent navigation for quick access.
+========================================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    z-index: 1000; /* Keeps navbar above content */
+}
+
+header h1 {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+
+/* =========================================
+   PORTFOLIO SECTION WRAPPER
+   Main container for project cards.
+========================================= */
+
+#portfolio {
+    padding: 6rem 2rem 5rem;
+    background-color: #1a1a1a;
+    border-radius: 24px;
+    width: 85%;
+    margin: 4rem auto;
+    text-align: center;
+}
+
+#portfolio h2 {
+    font-size: 2.6rem;
+    color: #ffcc00;
+    margin-bottom: 3rem;
+}
+
+
+/* =========================================
+   RESPONSIVE GRID LAYOUT
+   Auto-adjusting columns for all screens.
+========================================= */
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+
+/* =========================================
+   PORTFOLIO CARD
+   Glass-style card with hover elevation.
+========================================= */
+
+.portfolio-item {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 20px;
+    transition: 0.35s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================================
+   PROJECT IMAGE CONTAINER
+   Maintains consistent 16:9 ratio
+   and prevents layout shifts.
+========================================= */
+
+.project-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Ensures uniform thumbnails */
+    overflow: hidden;
+    border-radius: 14px;
+    margin-bottom: 18px;
+    background: #000;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* Eliminates black bars */
+    object-position: top;   /* Keeps important top content visible */
+    display: block;
+    transition: 0.4s ease;
+}
+
+
+/* =========================================
+   IMAGE HOVER OVERLAY
+   Adds blur + label for better UX.
+========================================= */
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.35s ease;
+}
+
+.image-overlay span {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Hover interactions */
+
+.portfolio-item:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.portfolio-item:hover .image-overlay {
+    opacity: 1;
+}
+
+
+/* =========================================
+   CARD TEXT STYLING
+========================================= */
+
+.portfolio-item h3 {
+    font-size: 1.3rem;
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+.portfolio-item p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   MOBILE OPTIMIZATION
+   Improves spacing and typography
+   for smaller devices.
+========================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 0 1rem;
+    }
+
+    .landing h1 {
+        font-size: 2.4rem;
+    }
+
+    #portfolio {
+        width: 92%;
+        padding: 5rem 1.5rem 4rem;
+    }
+
+    nav a {
+        margin-left: 12px;
+    }
+}
