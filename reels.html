@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Character Encoding -->
+  <meta charset="UTF-8">
+
+  <!-- Page Title -->
+  <title>Reels Portfolio | Priyansh Vyas</title>
+
+  <!-- Mobile Responsive View -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Main Global Stylesheet -->
+  <link rel="stylesheet" href="Assets/CSS/main.css">
+
+</head>
+
+<body>
+
+
+<!-- =========================
+     REELS PORTFOLIO SECTION
+========================= -->
+<section class="section">
+
+  <!-- Section Heading -->
+  <h2>Reels Portfolio</h2>
+
+  <!-- Short Description -->
+  <p>Selected Instagram Reels with custom-designed covers.</p>
+
+
+  <!-- =========================
+       REELS GRID CONTAINER
+       Dynamically filled using JavaScript
+  ========================= -->
+  <div class="reels-grid" id="reelsGrid"></div>
+
+
+
+  <!-- =========================
+       LOAD MORE BUTTON
+       Displays additional reels in batches
+  ========================= -->
+  <div class="cta">
+    <button class="btn" id="loadMore">Load More</button>
+  </div>
+
+
+
+  <!-- =========================
+       VIEW ALL CTA
+       Appears after all reels are loaded
+  ========================= -->
+  <div class="cta" id="viewAll" style="display:none;">
+    <a href="https://www.instagram.com/haryanvisongs.hits/reels"
+       target="_blank"
+       class="btn">
+       View all reels on Instagram
+    </a>
+  </div>
+
+</section>
+
+
+
+<script>
+
+/* ==================================================
+   REELS DATA SOURCE
+   Stores reel cover images and their Instagram links
+================================================== */
+
+  const reels = [
+
+    { img: "Assets/Images/reels/reel-01.jpg", link: "https://www.instagram.com/haryanvisongs.hits/reel/DT777j3khQ4/" },
+    { img: "Assets/Images/reels/reel-02.jpg", link: "https://www.instagram.com/haryanvisongs.hits/reel/DT5Y6jjiGtK/" },
+    { img: "Assets/Images/reels/reel-03.jpg", link: "https://www.instagram.com/haryanvisongs.hits/reel/DT25Q4qCFZT/" },
+    { img: "Assets/Images/reels/reel-04.jpg", link: "https://www.instagram.com/haryanvisongs.hits/reel/DT2CXBZkj5J/" },
+    { img: "Assets/Images/reels/reel-05.jpg", link: "https://www.instagram.com/haryanvisongs.hits/reel/DTp7l3OEsTA/" },
+
+    { img: "Assets/Images/reels/reel-06.jpg", link: "https://www.instagram.com/haryanvisongs.hits/reel/DUGXwfVEsWf/" },
+    { img: "Assets/Images/reels/reel-07.jpg", link: "https://www.instagram.com/haryanvisongs.hits/reel/DTdGb_okkty/" },
+    { img: "Assets/Images/reels/reel-08.jpg", link: "https://www.instagram.com/haryanvisongs.hits/reel/DTaf4ksiIEF/" },
+    { img: "Assets/Images/reels/reel-09.jpg", link: "https://www.instagram.com/haryanvisongs.hits/reel/DTVYCt2klbO/" },
+    { img: "Assets/Images/reels/reel-10.jpg", link: "https://www.instagram.com/haryanvisongs.hits/reel/DTAv-fuCFrE/" },
+
+    { img: "Assets/Images/reels/reel-11.jpg", link: "https://www.instagram.com/haryanvisongs.hits/reel/DTQOhrTEpMe/" },
+    { img: "Assets/Images/reels/reel-12.jpg", link: "https://www.instagram.com/haryanvisongs.hits/reel/DTIim-nEjJv/" },
+    { img: "Assets/Images/reels/reel-13.jpg", link: "https://www.instagram.com/haryanvisongs.hits/reel/DThifqsiFJ0/" },
+    { img: "Assets/Images/reels/reel-14.jpg", link: "https://www.instagram.com/haryanvisongs.hits/reel/DTnXWuIkosP/" },
+    { img: "Assets/Images/reels/reel-15.jpg", link: "https://www.instagram.com/haryanvisongs.hits/reel/DTsk3s9iNfn/" },
+
+    { img: "Assets/Images/reels/reel-16.jpg", link: "https://www.instagram.com/haryanvisongs.hits/reel/DTxqkKhEmUm/" },
+    { img: "Assets/Images/reels/reel-17.jpg", link: "https://www.instagram.com/haryanvisongs.hits/reel/DT9xkEAkpoY/" },
+    { img: "Assets/Images/reels/reel-18.jpg", link: "https://www.instagram.com/haryanvisongs.hits/reel/DT-ig2BiK5m/" },
+    { img: "Assets/Images/reels/reel-19.jpg", link: "https://www.instagram.com/haryanvisongs.hits/reel/DUA5gY9ErhY/" },
+    { img: "Assets/Images/reels/reel-20.jpg", link: "https://www.instagram.com/haryanvisongs.hits/reel/DUBNKi0COCg/" }
+
+  ];
+
+
+
+/* ==================================================
+   DOM ELEMENT REFERENCES
+================================================== */
+
+  const grid = document.getElementById("reelsGrid");
+  const loadMoreBtn = document.getElementById("loadMore");
+  const viewAll = document.getElementById("viewAll");
+
+
+
+/* ==================================================
+   PAGINATION CONFIGURATION
+================================================== */
+
+  let visible = 0;   // Tracks currently visible reels
+  const STEP = 10;   // Number of reels per load
+
+
+
+/* ==================================================
+   RENDER FUNCTION
+   Dynamically injects reels into the grid
+================================================== */
+
+  function renderReels() {
+
+    const next = reels.slice(visible, visible + STEP);
+
+    next.forEach(reel => {
+
+      const a = document.createElement("a");
+      a.href = reel.link;
+      a.target = "_blank";
+      a.className = "reel-card";
+
+      a.innerHTML = `
+        <img src="${reel.img}" alt="Reel">
+        <span class="play">▶</span>
+      `;
+
+      grid.appendChild(a);
+    });
+
+    visible += STEP;
+
+    // Hide button when all reels are loaded
+    if (visible >= reels.length) {
+      loadMoreBtn.style.display = "none";
+      viewAll.style.display = "block";
+    }
+  }
+
+
+
+/* Initial Render */
+renderReels();
+
+/* Load More Click Event */
+loadMoreBtn.addEventListener("click", renderReels);
+
+</script>
+
+</body>
+</html>

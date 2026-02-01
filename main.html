@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Ensures proper responsive behavior on all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>Priyansh Vyas | Portfolio </title>
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="Assets/CSS/main.css">
+
+    <!-- Google Font: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION BAR
+========================= -->
+<nav class="navbar">
+    <div class="logo">
+        <a href="main.html#home">Priyansh Vyas</a>
+    </div>
+
+    <!-- Desktop Navigation Links -->
+    <ul class="nav-links">
+        <li><a href="main.html#about">About</a></li>
+        <li><a href="main.html#projects">Projects</a></li>
+        <li><a href="main.html#skills">Skills</a></li>
+        <li><a href="main.html#contact">Contact</a></li>
+    </ul>
+
+    <!-- Mobile Menu Toggle Button -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+
+<!-- Mobile Navigation Menu -->
+<div id="overlay"></div>
+
+<div id="mobileMenu" class="mobile-menu">
+    <a href="main.html#about" onclick="toggleMenu()">About</a>
+    <a href="main.html#projects" onclick="toggleMenu()">Projects</a>
+    <a href="main.html#skills" onclick="toggleMenu()">Skills</a>
+    <a href="main.html#contact" onclick="toggleMenu()">Contact</a>
+</div>
+
+
+<!-- =========================
+     HERO / HEADER SECTION
+========================= -->
+<header>
+    <h1>Building Modern Digital Experiences</h1>
+    <p>That Connect Creativity With Technology</p>
+    <a href="#contact" class="btn">Let’s Work Together</a>
+</header>
+
+
+<!-- =========================
+     ABOUT SECTION
+========================= -->
+<section id="about" class="section">
+<h2>About Me</h2>
+
+        <div class="about-content">
+        <p class="about-intro">
+        My name is <strong>Priyansh Vyas</strong>. I work as a video editor and handle digital content,
+        mainly for Instagram Reels and music promotions.
+        I focus on creating clean, engaging visuals that feel natural on social media
+        and hold the viewer’s attention.
+        
+        <p class="about-text"></p>
+        Over time, I’ve worked on video editing, basic graphic design, and social media promotion,
+        which has helped me understand what kind of content actually performs online.
+        I prefer keeping things simple, clear, and practical, with an emphasis on quality
+        and consistency in every project I work on.
+        </div>
+</section>
+
+
+<!-- =========================
+     FEATURED PROJECTS SECTION
+========================= -->
+<section id="projects" class="section">
+    <h2>Projects</h2>
+
+    <div class="projects-container">
+
+        <!-- Project Card: Reels Promotion -->
+        <div class="project-card">
+            <h3>Reels Promotion</h3>
+
+            <img src="Assets/Images/reels-promotion.jpg" alt="Reels Promotion Project">
+
+            <a href="reels.html" class="btn">View</a>
+        </div>
+
+        <!-- Project Card: Editing & Visual Design (Upcoming) -->
+        <div class="project-card">
+            <h3>Editing & Visual Design</h3>
+
+            <img src="Assets/Images/editing-visual.jpg" alt="Editing & Visual Design Project">
+
+            <a href="under-maintenance.html" class="btn">Coming Soon</a>
+        </div>
+
+    </div>
+
+    <!-- Redirect to Full Projects Page -->
+    <div class="explore-more">
+        <a href="projects.html" class="btn">View All Projects</a>
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SKILLS SECTION
+========================= -->
+<section id="skills" class="section">
+        <h2>Skills</h2>
+
+        <ul class="skills-list">
+            <li> Social Media </li>
+            <li>Front End </li>
+            <li>Graphic Designing </li>
+            <li>Video Editing </li>
+            <li>App Devlopment </li>
+        </ul>
+</section>
+
+
+<!-- =========================
+     CONTACT SECTION
+========================= -->
+<section id="contact" class="section">
+        <h2>Contact</h2>
+
+        <p>Let's collaborate! Reach out to me at: <br>haryanvisongs.hits@gmail.com or </p>
+    
+        <!-- Social Media Links -->
+        <div class="social-links">
+
+        <a href="https://instagram.com/priyansh_vyas07" target="_blank" class="social-icon">
+        <img src="Assets/Icons/instagram.svg" alt="Instagram">
+        </a>
+
+        <a href="https://www.linkedin.com/in/priyansh-vyas07/" target="_blank" class="social-icon">
+        <img src="Assets/Icons/linkedin.svg" alt="LinkedIn">
+        </a>
+
+        <a href="https://youtube.com/#" target="_blank" class="social-icon">
+        <img src="Assets/Icons/youtube.svg" alt="YouTube">
+        </a>
+
+        <a href="https://github.com/priyanshvyas07" target="_blank" class="social-icon">
+        <img src="Assets/Icons/github.svg" alt="GitHub">
+        </a>
+
+        </div>
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+<footer>
+        <p>© 2025-2026 Priyansh Vyas | All Rights Reserved </p>
+</footer>
+
+
+<!-- Main JavaScript File -->
+<script src="Assets/JavaScript/main.js"></script>
+
+</body>
+</html>
