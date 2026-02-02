@@ -558,3 +558,25 @@ html {
     }
 
 }
+
+/* BACK BUTTON */
+
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
+    backdrop-filter: blur(6px);
+    z-index: 999;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: #ffcc00;
+    color: #000;
+}

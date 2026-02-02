@@ -270,3 +270,11 @@ nav a:hover {
     }
 }
 
+/* =========================
+   BACK HOME BUTTON (BOTTOM)
+========================= */
+
+.back-home {
+    text-align: center;
+    margin: 60px 0 40px;
+}
