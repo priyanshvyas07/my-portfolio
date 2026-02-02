@@ -529,7 +529,6 @@ html {
 
 @media (max-width: 768px) {
 
-    /* Hero section breathing space */
     header {
         padding: 40px 20px;
         height: auto;
@@ -540,20 +539,20 @@ html {
         font-size: 2.2rem;
         line-height: 1.2;
         padding: 0 10px;
+        margin-bottom: 18px; /* gap */
     }
 
     header p {
         padding: 0 15px;
         font-size: 1rem;
+        margin-bottom: 25px; /* gap */
     }
 
-    /* Section side spacing */
     .section {
         width: 92%;
         padding: 4rem 1.5rem;
     }
 
-    /* Footer spacing */
     footer {
         padding: 3rem 1.5rem;
     }
